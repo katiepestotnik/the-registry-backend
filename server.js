@@ -1,7 +1,7 @@
 //tutorial from Alex Merced YouTube used for token and auth with JWT
-https://www.youtube.com/watch?v=7laEQTjhe_E&t=280s
-https://www.youtube.com/watch?v=R-JyaR0LSHw&t=806s
-https://www.youtube.com/watch?v=8n0XjO79mIY
+//https://www.youtube.com/watch?v=7laEQTjhe_E&t=280s
+//https://www.youtube.com/watch?v=R-JyaR0LSHw&t=806s
+//https://www.youtube.com/watch?v=8n0XjO79mIY
 require("dotenv").config();
 const { PORT = 3000 } = process.env;
 const express = require("express");

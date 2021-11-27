@@ -1,7 +1,7 @@
 //tutorial from Alex Merced YouTube used for token and auth with JWT
-https://www.youtube.com/watch?v=7laEQTjhe_E&t=280s
-https://www.youtube.com/watch?v=R-JyaR0LSHw&t=806s
-https://www.youtube.com/watch?v=8n0XjO79mIY
+//https://www.youtube.com/watch?v=7laEQTjhe_E&t=280s
+//https://www.youtube.com/watch?v=R-JyaR0LSHw&t=806s
+//https://www.youtube.com/watch?v=8n0XjO79mIY
 
 require('dotenv').config();
 const User = require('../models/user');
@@ -22,7 +22,7 @@ router.post('/signup', async (req, res) => {
         res.status(400).json({ error: "POST ROUTE ERROR" })
     };
 });
-router.post("/login", async(req, res) => {
+router.post("/login", async (req, res) => {
     try {
         const { username, password } = req.body;
         const user = await User.findOne({ username });
@@ -35,33 +35,12 @@ router.post("/login", async(req, res) => {
                 res.status(400).json({ error: "PASSWORD DOES NOT MATCH" });
             }
         } else {
-            res.status(400).json({error: "USER DOES NOT EXIST"})
+            res.status(400).json({ error: "USER DOES NOT EXIST" })
         }
     }
     catch (error) {
-        res.status(400).json({error: "POST ROUTE ERROR"})
+        res.status(400).json({ error: "POST ROUTE ERROR" })
     }
-})
-router.get("/registry", async(req, res) => {
-    try {
-        const { username, password } = req.body;
-        const user = await User.findOne({ username });
-        if (user) {
-            const match = await bcrypt.compare(password, user.password);
-            if (match) {
-                const token = await jwt.sign({ username }, SECRET);
-                res.status(200).json({ token });
-                console.log('test match function')
-            } else {
-                res.status(400).json({ error: "PASSWORD DOES NOT MATCH" });
-            }
-        } else {
-            res.status(400).json({error: "USER DOES NOT EXIST"})
-        }
-    }
-    catch (error) {
-        res.status(400).json({error: "POST ROUTE ERROR"})
-    }
-})
+});
 
 module.exports = router
