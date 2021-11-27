@@ -4,6 +4,7 @@ const HolSchema = new Schema({
     itemName: String,
     itemDescription: String,
     itemUrl: String,
+    username: String
 });
 const HolRegistry = model("HolRegistry", HolSchema);
 
