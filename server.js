@@ -6,6 +6,7 @@ require("dotenv").config();
 const { PORT = 3000 } = process.env;
 const express = require("express");
 const app = express();
+const mongoose = require("./db/db");
 const cors = require("cors");
 const morgan = require("morgan");
 const AuthRouter = require('./controllers/user');
