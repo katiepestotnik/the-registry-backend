@@ -28,7 +28,7 @@ app.use('/auth', AuthRouter)
 //routes from controllers
 app.use('/wed-registry', WedRouter);
 app.use('/hol-registry', HolRouter);
-app.use('/api-route', ApiRouter);
+app.use('/api', ApiRouter);
 
 
 
