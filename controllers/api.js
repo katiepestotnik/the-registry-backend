@@ -9,6 +9,8 @@ router.get("/api", auth, async (req, res) => {
         const response = await axios("https://openapi.etsy.com/v2/listings/active?includes=MainImage&api_key=5351youj6cfiov6nca92yf3i&tags=gift")
         // console.log(response.data)
 
+
+        
         //function that can get a random number from 1-25, 
         //we'll use this to target a random result from our search results object!
         function randomNumber(){
