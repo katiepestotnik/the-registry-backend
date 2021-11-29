@@ -3,10 +3,10 @@ const router = express.Router();
 const axios = require("axios")
 
 //API route
-router.get("/api", async (req, res) => {
+router.get("/", async (req, res) => {
     try {
         const response = await axios("https://openapi.etsy.com/v2/listings/active?includes=MainImage&api_key=5351youj6cfiov6nca92yf3i&tags=gift")
-        // console.log(response.data)
+        //console.log(response.data)
 
 
 
