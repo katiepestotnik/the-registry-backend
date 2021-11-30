@@ -5,7 +5,7 @@ const axios = require("axios")
 //API route
 router.get("/", async (req, res) => {
     try {
-        const response = await axios("https://openapi.etsy.com/v2/listings/active?includes=MainImage&api_key=5351youj6cfiov6nca92yf3i&tags=gift")
+        const response = await axios("https://openapi.etsy.com/v2/listings/active?includes=MainImage&api_key=5351youj6cfiov6nca92yf3i&tags=wedding+gift")
         //console.log(response.data)
 
 
@@ -47,7 +47,7 @@ router.get("/", async (req, res) => {
     
 
     
-        const filteredData = res.json(response.data)
+        res.json(response.data)
         
     } catch (error) {
         res.status(400).json(error);

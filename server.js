@@ -13,6 +13,7 @@ const AuthRouter = require('./controllers/user');
 const HolRouter = require('./controllers/hol');
 const WedRouter = require('./controllers/wed');
 const ApiRouter = require('./controllers/api');
+const WeddingApiRouter = require('./controllers/weddingapi')
 
  //Middleware   
 app.use(cors());
@@ -30,6 +31,7 @@ app.use('/auth', AuthRouter)
 app.use('/wed-registry', WedRouter);
 app.use('/hol-registry', HolRouter);
 app.use('/api', ApiRouter);
+app.use('/weddingapi', WeddingApiRouter);
 
 
 
